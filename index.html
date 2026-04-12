@@ -446,169 +446,41 @@
         </div>
     </footer>
 
+    <script src="products-data.js"></script>
     <script>
-        // Tailwind initialization
-        function initializeTailwind() {
-            return {
-                config(userConfig = {}) {
-                    return {
-                        content: [],
-                        theme: {
-                            extend: {
-                                colors: {
-                                    primary: '#ff6b00'
-                                }
-                            }
-                        },
-                        plugins: [],
-                        ...userConfig,
-                    }
-                },
-                theme(userConfig = {}) {
-                    return {
-                        ...this.defaultTheme(),
-                        ...userConfig,
-                    }
-                },
-                defaultTheme() {
-                    return {
-                        extend: {},
-                    }
-                },
-            }
-        }
+         // Tailwind initialization
+         function initializeTailwind() {
+             return {
+                 config(userConfig = {}) {
+                     return {
+                         content: [],
+                         theme: {
+                             extend: {
+                                 colors: {
+                                     primary: '#ff6b00'
+                                 }
+                             }
+                         },
+                         plugins: [],
+                         ...userConfig,
+                     }
+                 },
+                 theme(userConfig = {}) {
+                     return {
+                         ...this.defaultTheme(),
+                         ...userConfig,
+                     }
+                 },
+                 defaultTheme() {
+                     return {
+                         extend: {},
+                     }
+                 },
+             }
+         }
         
         // Products Database
-        let products = [
-            {
-                id: 1,
-                name: "Personalized Photo Mug",
-                category: "Gifts",
-                price: 299,
-                img: "https://picsum.photos/id/1015/300/300",
-                rating: 5
-            },
-            {
-                id: 2,
-                name: "Crystal Photo Frame",
-                category: "Gifts",
-                price: 449,
-                img: "https://picsum.photos/id/201/300/300",
-                rating: 4
-            },
-            {
-                id: 3,
-                name: "LED Name Lamp",
-                category: "Gifts",
-                price: 599,
-                img: "https://picsum.photos/id/133/300/300",
-                rating: 5
-            },
-            {
-                id: 4,
-                name: "Magnetic Science Kit",
-                category: "Educational",
-                price: 899,
-                img: "https://picsum.photos/id/180/300/300",
-                rating: 5
-            },
-            {
-                id: 5,
-                name: "Math Learning Puzzle",
-                category: "Educational",
-                price: 399,
-                img: "https://picsum.photos/id/251/300/300",
-                rating: 4
-            },
-            {
-                id: 6,
-                name: "Solar System Model",
-                category: "Educational",
-                price: 1299,
-                img: "https://picsum.photos/id/312/300/300",
-                rating: 5
-            },
-            {
-                id: 7,
-                name: "Fast Charger 65W",
-                category: "Electrical",
-                price: 799,
-                img: "https://picsum.photos/id/1005/300/300",
-                rating: 5
-            },
-            {
-                id: 8,
-                name: "LED Smart Bulb (RGB)",
-                category: "Electrical",
-                price: 449,
-                img: "https://picsum.photos/id/866/300/300",
-                rating: 4
-            },
-            {
-                id: 9,
-                name: "Wireless Earbuds Pro",
-                category: "Electrical",
-                price: 1499,
-                img: "https://picsum.photos/id/1016/300/300",
-                rating: 5
-            },
-            {
-                id: 10,
-                name: "Kitchen Organizer Set",
-                category: "Accessories",
-                price: 599,
-                img: "https://picsum.photos/id/133/300/300",
-                rating: 4
-            },
-            {
-                id: 11,
-                name: "Travel Toiletry Bag",
-                category: "Accessories",
-                price: 349,
-                img: "https://picsum.photos/id/201/300/300",
-                rating: 5
-            },
-            {
-                id: 12,
-                name: "Reusable Shopping Bags (Set of 5)",
-                category: "Accessories",
-                price: 199,
-                img: "https://picsum.photos/id/1005/300/300",
-                rating: 4
-            },
-            {
-                id: 13,
-                name: "Remote Control Car",
-                category: "Toys",
-                price: 899,
-                img: "https://picsum.photos/id/312/300/300",
-                rating: 5
-            },
-            {
-                id: 14,
-                name: "Teddy Bear Giant",
-                category: "Toys",
-                price: 1299,
-                img: "https://picsum.photos/id/180/300/300",
-                rating: 5
-            },
-            {
-                id: 15,
-                name: "Building Block Set (200 pcs)",
-                category: "Toys",
-                price: 799,
-                img: "https://picsum.photos/id/251/300/300",
-                rating: 5
-            },
-            {
-                id: 16,
-                name: "Musical Keyboard Toy",
-                category: "Toys",
-                price: 599,
-                img: "https://picsum.photos/id/866/300/300",
-                rating: 4
-            }
-        ]
+        let products = window.products || []
         
         let cart = []
         
@@ -627,12 +499,20 @@
             }
             
             filteredProducts.forEach(product => {
+                // each card links to shared product detail page with id
+                const href = `product.html?id=${product.id}`
+                const currentPrice = Number(product.price || 0)
+                const discount = Number(product.discountPercent || 0)
+                const originalPrice = Number(product.originalPrice || (discount ? Math.round(currentPrice / (1 - discount/100)) : currentPrice))
+                const discountBadgeHTML = discount > 0 ? `<div class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 text-xs font-bold rounded-3xl">${discount}% OFF</div>` : ''
+
                 const cardHTML = `
-                <div class="product-card bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm">
+                <div onclick="window.location.href='${href}'" class="product-card bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm cursor-pointer">
                     <div class="relative">
+                        ${discountBadgeHTML}
                         <img src="${product.img}" alt="${product.name}" class="w-full h-48 object-cover">
                         <div class="absolute top-4 right-4 bg-white text-[#ff6b00] px-3 py-1 text-xs font-bold rounded-3xl shadow">
-                            ৳${product.price}
+                            ৳${currentPrice}
                         </div>
                     </div>
                     <div class="p-4">
@@ -640,6 +520,7 @@
                             <div>
                                 <p class="text-xs uppercase text-gray-400">${product.category}</p>
                                 <h4 class="font-semibold text-lg leading-tight mt-1">${product.name}</h4>
+                                ${originalPrice > currentPrice ? `<div class="mt-2"><span class="text-gray-400 line-through text-sm">৳ ${originalPrice}</span> <span class="text-[#ff6b00] font-semibold text-sm">৳ ${currentPrice}</span></div>` : ''}
                             </div>
                             <div class="flex text-amber-400 text-sm">
                                 ${'★'.repeat(product.rating)}
@@ -914,16 +795,28 @@
             }
         }
         
-        // Initialize everything
+// Initialize everything
         function initialize() {
-            initializeTailwind().config()
+            initializeTailwind().config();
+            
+            // load shared products (from products-data.js)
+            products = window.products || products || [];
+            
+            // load cart from localStorage so product.html additions persist
+            try {
+                const stored = localStorage.getItem('scooby_cart');
+                if (stored) cart = JSON.parse(stored);
+            } catch (e) {
+                console.warn('Failed to parse stored cart', e);
+            }
             
             // Render initial products
-            renderProducts(products)
+            renderProducts(products);
+            updateCartUI();
             
-            console.log('%c✅ Scooby Cart website is fully loaded and functional!', 'color:#ff6b00; font-size:18px; font-weight:bold')
-            console.log('Logo: Logo.png (make sure the file is in the same folder)')
-            console.log('Add to cart, search, filters, cart drawer — everything works!')
+            console.log('%c✅ Scooby Cart website is fully loaded and functional!', 'color:#ff6b00; font-size:18px; font-weight:bold');
+            console.log('Logo: Logo.png (make sure the file is in the same folder)');
+            console.log('Add to cart, search, filters, cart drawer — everything works!');
         }
         
         // Start the app

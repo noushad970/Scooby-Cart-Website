@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Product — Scooby Cart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+  <div class="max-w-5xl mx-auto px-6 py-12">
+    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-[#ff6b00]"><i class="fa-solid fa-arrow-left"></i> Back to Shop</a>
+
+    <div id="productWrapper" class="mt-8"></div>
+  </div>
+
+  <script src="products-data.js"></script>
+  <script>
+    function qs(name) {
+      const url = new URL(window.location.href)
+      return url.searchParams.get(name)
+    }
+
+    function renderProduct(product) {
+      const wrapper = document.getElementById('productWrapper')
+      if (!product) return wrapper.innerHTML = '<div class="p-8 bg-white rounded-3xl shadow">Product not found</div>'
+
+      const images = product.images || [product.img]
+
+      // pricing
+      const currentPrice = Number(product.price || 0)
+      const discount = Number(product.discountPercent || 0)
+      const originalPrice = Number(product.originalPrice || (discount ? Math.round(currentPrice / (1 - discount/100)) : currentPrice))
+
+      const discountBadge = discount > 0 ? `<div class="inline-block bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">${discount}% OFF</div>` : ''
+
+      wrapper.innerHTML = `
+      <div class="grid md:grid-cols-2 gap-8 bg-white p-8 rounded-3xl shadow-lg">
+        <div>
+          <div class="border rounded-2xl overflow-hidden mb-4">
+            <img id="mainImage" src="${images[0]}" alt="${product.name}" class="w-full h-96 object-contain bg-gray-100">
+          </div>
+
+          <div class="flex gap-3">
+            ${images.map(src => `<button onclick="setImage('${src}')" class="w-20 h-20 p-0 bg-white rounded-xl border" aria-label="thumbnail"><img src="${src}" class="w-full h-full object-cover rounded-xl" /></button>`).join('')}
+          </div>
+        </div>
+
+        <div>
+          <h1 class="text-3xl font-bold mb-2">${product.name} ${discountBadge}</h1>
+          <p class="text-sm text-gray-500 mb-4">Category: ${product.category}</p>
+
+          <div class="mb-6 flex items-end gap-4">
+            ${originalPrice && originalPrice > currentPrice ? `<span class="text-gray-400 line-through text-lg">৳ ${originalPrice}</span>` : ''}
+            <span class="text-3xl font-semibold text-[#ff6b00]">৳ ${currentPrice}</span>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="font-semibold mb-2">Product description</h3>
+            <div class="text-gray-700 whitespace-pre-line">${product.description || 'No description provided.'}</div>
+          </div>
+
+          <div class="flex gap-4">
+            <button onclick="addToCartFromDetail(${product.id})" class="px-6 py-3 rounded-3xl bg-[#ff6b00] text-white font-semibold">Add to cart</button>
+            <a href="index.html" class="px-6 py-3 rounded-3xl border border-gray-200 text-gray-700">Continue Shopping</a>
+          </div>
+
+        </div>
+      </div>`
+    }
+
+    function setImage(src) { document.getElementById('mainImage').src = src }
+
+    function addToCartFromDetail(id) {
+      // store cart in localStorage to share between pages
+      const stored = localStorage.getItem('scooby_cart')
+      let cart = stored ? JSON.parse(stored) : []
+      const product = window.products.find(p => p.id === Number(id))
+      if (!product) return alert('Product not found')
+
+      const existing = cart.find(i => i.id === product.id)
+      if (existing) existing.quantity = (existing.quantity || 1) + 1
+      else cart.push({...product, quantity: 1})
+
+      localStorage.setItem('scooby_cart', JSON.stringify(cart))
+      alert(product.name + ' added to cart')
+    }
+
+    // Load product
+    (function(){
+      const id = Number(qs('id'))
+      const product = window.products && window.products.find(p => p.id === id)
+      if (!product) return document.getElementById('productWrapper').innerHTML = '<div class="p-8 bg-white rounded-3xl shadow">Product not found</div>'
+
+      // ensure images array exists
+      if (!product.images) product.images = [product.img]
+
+      renderProduct(product)
+    })()
+  </script>
+</body>
+</html>
