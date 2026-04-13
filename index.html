@@ -446,6 +446,19 @@
         </div>
     </footer>
 
+    <!-- CONTACT FLOATING BUTTONS -->
+    <div id="contactButtons" class="fixed bottom-6 right-6 flex flex-col items-end gap-3 z-50">
+        <button id="facebookBtn" class="flex items-center gap-3 bg-blue-600 text-white px-4 py-3 rounded-full shadow-lg hover:bg-blue-700" title="Message us on Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+            <span class="hidden sm:inline">Message us on Facebook</span>
+        </button>
+
+        <button id="whatsappBtn" class="flex items-center gap-3 bg-emerald-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-emerald-600" title="Message us on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="hidden sm:inline">Message us on WhatsApp</span>
+        </button>
+    </div>
+
     <script src="products-data.js"></script>
     <script>
          // Tailwind initialization
@@ -795,7 +808,7 @@
             }
         }
         
-// Initialize everything
+        // Initialize everything
         function initialize() {
             initializeTailwind().config();
             
@@ -813,6 +826,21 @@
             // Render initial products
             renderProducts(products);
             updateCartUI();
+            
+            // Wire contact buttons
+            try {
+                const fbBtn = document.getElementById('facebookBtn');
+                const waBtn = document.getElementById('whatsappBtn');
+                if (fbBtn) fbBtn.addEventListener('click', () => {
+                    window.open('https://www.facebook.com/profile.php?id=61572576505517', '_blank');
+                });
+                if (waBtn) waBtn.addEventListener('click', () => {
+                    // Bangladesh international format without +: 8801516589496
+                    window.open('https://wa.me/8801516589496', '_blank');
+                });
+            } catch (e) {
+                console.warn('Failed to wire contact buttons', e);
+            }
             
             console.log('%c✅ Scooby Cart website is fully loaded and functional!', 'color:#ff6b00; font-size:18px; font-weight:bold');
             console.log('Logo: Logo.png (make sure the file is in the same folder)');
