@@ -83,6 +83,39 @@ window.products = [
 📩 অর্ডার করতে ইনবক্স করুন এখনই!
 👉 আজই নিয়ে নিন, আপনার শিশুর শেখা হোক আনন্দময়! ❤️
     `
+  },
+  {
+    id: 4,
+    name: "53 Pcs Wildlife Safari Animals Toys Set",
+    category: "Toys",
+    price: 650,
+    originalPrice: 880,  
+    img: "images/aaimg2.png",
+    images: ["images/aaimg1.png", "images/aaimg2.png", "images/aaimg3.png","images/aaimg4.png", "images/aaimg5.png"],
+
+    rating: 5,
+    discountPercent: 24,
+    description: `
+    🦁 Wildlife Safari Animals Figures Toys – ৫৩ পিসের দারুণ একটি এডুকেশনাল টয় সেট!
+
+এই সেটে রয়েছে বিভিন্ন ধরনের বন্য ও খামারের প্রাণীর রিয়ালিস্টিক ফিগার, যা বাচ্চাদের খেলতে খেলতে শেখার সুযোগ দেয়।
+
+👶 ৩-৫ বছরের বাচ্চাদের জন্য উপযুক্ত
+🌿 Jungle + Farm Animals Collection
+🎨 Colorful & Realistic Design
+🧸 Safe, Non-Toxic Material
+
+💡 উপকারিতা:
+✔️ Animal Recognition স্কিল উন্নত করে
+✔️ কল্পনাশক্তি ও গল্প বলার দক্ষতা বাড়ায়
+✔️ ইন্টার‍্যাকটিভ লার্নিং তৈরি করে
+✔️ স্ক্রিন টাইম কমাতে সাহায্য করে
+
+🎂 Cake Topper ও Party Decoration হিসেবেও ব্যবহার করা যায়
+
+🚚 সারা বাংলাদেশে ডেলিভারি
+📩 অর্ডার করতে যোগাযোগ করুন
+    `
   }
 ];
 /*
