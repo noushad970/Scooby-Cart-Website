@@ -116,6 +116,56 @@ window.products = [
 🚚 সারা বাংলাদেশে ডেলিভারি
 📩 অর্ডার করতে যোগাযোগ করুন
     `
+  },
+  {
+    id: 5,
+    name: "Anime LED Lightbox Shadow Box Frame",
+    category: "Gifts",
+    price: 999,
+    originalPrice: 2000,
+    img: "images/yimg4.png",
+    images: ["images/yimg1.png", "images/yimg2.png", "images/yimg3.png","images/yimg4.png", "images/yimg5.png", "images/yimg6.png", "images/yimg7.png"],
+
+    rating: 5,
+    discountPercent: 50,
+    description: `
+    Scooby Cart-এ স্বাগতম 🛒
+আপনার পছন্দের সবকিছু এখন এক জায়গায়!
+
+🎌 Anime LED Lightbox Shadow Box – আপনার রুমের জন্য স্টাইলিশ ও ইউনিক ডেকোর আইটেম!
+
+এই লাইটবক্সে LED লাইটের মাধ্যমে অ্যানিমে ডিজাইনগুলো সুন্দরভাবে ফুটে ওঠে, যা রাতে একটি পারফেক্ট অ্যাম্বিয়েন্স তৈরি করে।
+
+✨ Features:
+✔️ LED Backlight Glow Effect
+✔️ Multiple Layer Shadow Design
+✔️ Lightweight & Durable
+✔️ Energy Efficient
+
+💡 Uses:
+✔️ Room Decoration
+✔️ Night Light
+✔️ Gift for Anime Lovers
+
+🎁 জন্মদিন বা স্পেশাল গিফট হিসেবে একদম পারফেক্ট!
+
+🚚 All Over Bangladesh Delivery Available
+Price 999 Taka + Delivery Charge
+Items: 1 Shadow Light Box Frame + 2 Led Shadow Images
+You can order Shadow image as your choice Per Piece 99 Taka.
+
+🎁 গিফট আইটেম
+📚 এডুকেশনাল প্রোডাক্ট
+⚡ ইলেকট্রিক্যাল
+🧸 খেলনা
+🧴 ডেইলি এক্সেসরিজ
+
+নতুন প্রোডাক্ট, অফার ও রিভিউ পেতে এখনই Subscribe করুন 🔔
+
+Facebook page link: https://www.facebook.com/profile.php?id=61572576505517 
+Tiktok link: https://www.tiktok.com/@scoobycart3
+Instagram link: https://www.instagram.com/scoobycart3/
+    `
   }
 ];
 /*

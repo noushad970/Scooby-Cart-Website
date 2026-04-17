@@ -28,7 +28,13 @@
         }
 
         .hero-bg {
-            background: linear-gradient(135deg, #0cb7c4 0%, #0192d4 100%);
+            /* Use a cover photo with a semi-transparent gradient overlay for readable white text */
+            background-image: linear-gradient(135deg, rgba(12,183,196,0.45) 0%, rgba(1,146,212,0.45) 100%), url('images/CoverPhoto.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* Fallback color */
+            background-color: #0192d4;
         }
         
         .product-card {
