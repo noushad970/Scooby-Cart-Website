@@ -166,6 +166,40 @@ Facebook page link: https://www.facebook.com/profile.php?id=61572576505517
 Tiktok link: https://www.tiktok.com/@scoobycart3
 Instagram link: https://www.instagram.com/scoobycart3/
     `
+  },
+  {
+    id: 6,
+    name: "Mini Water Purifying Filter",
+    category: "Accessories",
+    price: 150,
+    originalPrice: 150,
+    img: "images/fimg1.jpg",
+    images: ["images/fimg1.jpg", "images/fimg2.jpg", "images/fimg3.jpg","images/fimg4.jpg", "images/fimg5.jpg"],
+
+    rating: 5,
+    discountPercent: 0,
+    description: `
+    💧 Mini Water Purifying Filter – আপনার দৈনন্দিন জীবনে পরিষ্কার পানির সহজ সমাধান!
+
+এই ছোট কিন্তু কার্যকর ফিল্টারটি ট্যাপের সাথে সহজেই লাগানো যায় এবং পানি থেকে ধুলা, ময়লা ও ক্ষুদ্র কণাগুলো ফিল্টার করতে সাহায্য করে।
+
+✨ Features:
+✔️ Multi-layer Filtration System
+✔️ Easy Installation (No Tools Needed)
+✔️ Transparent Body – Filter দেখতে পারবেন
+✔️ Strong & Durable Material
+
+💡 উপকারিতা:
+✔️ পানির গুণগত মান উন্নত করে
+✔️ পরিবারের জন্য নিরাপদ পানি নিশ্চিত করে
+✔️ রান্না ও দৈনন্দিন কাজে উপকারী
+✔️ Water Flow Smooth রাখে
+
+🏠 Kitchen, Bathroom, Basin—সব জায়গায় ব্যবহারযোগ্য
+
+🚚 All Over Bangladesh Delivery Available
+📩 Order Now via Inbox
+    `
   }
 ];
 /*
