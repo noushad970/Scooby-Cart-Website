@@ -123,8 +123,8 @@ window.products = [
     category: "Gifts",
     price: 999,
     originalPrice: 2000,
-    img: "images/yimg4.png",
-    images: ["images/yimg1.png", "images/yimg2.png", "images/yimg3.png","images/yimg4.png", "images/yimg5.png", "images/yimg6.png", "images/yimg7.png"],
+    img: "images/sbimg3.jpg",
+    images: ["images/sbimg1.jpg", "images/sbimg2.jpg", "images/sbimg3.jpg","images/sbimg4.jpg", "images/sbimg5.jpg"],
 
     rating: 5,
     discountPercent: 50,
