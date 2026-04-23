@@ -200,6 +200,37 @@ Instagram link: https://www.instagram.com/scoobycart3/
 🚚 All Over Bangladesh Delivery Available
 📩 Order Now via Inbox
     `
+  },
+  {id: 7,
+    name: "Miracle Bricks Educational DIY Building Blocks Set 52/104 Pcs",
+    category: "Toys",
+    price: 399,
+    originalPrice: 500,
+    img: "images/timg4.png",
+    images: ["images/timg1.png", "images/timg2.png", "images/timg3.png","images/timg4.png", "images/timg5.png", "images/timg6.png", "images/timg7.png","images/timg8.png"],
+
+    rating: 5,
+    discountPercent: 20,
+    description: `
+    🧩 Miracle Bricks Educational DIY Building Blocks – বাচ্চাদের জন্য মজার ও শিক্ষামূলক খেলনা!
+
+এই বিল্ডিং ব্লক সেট দিয়ে শিশুরা নিজের কল্পনা অনুযায়ী বিভিন্ন স্ট্রাকচার তৈরি করতে পারে, যা তাদের সৃজনশীলতা ও চিন্তাশক্তি বাড়াতে সাহায্য করে।
+
+👶 শিশুদের জন্য উপযুক্ত
+🎨 Colorful & Attractive Design
+🧠 Brain Development Toy
+🧩 52/104 Pieces Set
+
+💡 উপকারিতা:
+✔️ Creativity & Imagination বাড়ায়
+✔️ Problem Solving Skill উন্নত করে
+✔️ Hand-Eye Coordination উন্নত করে
+✔️ Screen Time কমাতে সাহায্য করে
+
+🎁 Best Gift for Kids
+
+🚚 All Over Bangladesh Delivery Available
+    `
   }
 ];
 /*
