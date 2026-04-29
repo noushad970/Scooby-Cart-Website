@@ -231,6 +231,41 @@ Instagram link: https://www.instagram.com/scoobycart3/
 
 🚚 All Over Bangladesh Delivery Available
     `
+  },
+  {
+    id: 8,
+    name: "Frog Balance Math Toy Set",
+    category: "Toys",
+    price: 749,
+    originPrice: 1000,
+    img: "images/pimg3.png",
+    images: ["images/pimg1.png", "images/pimg2.png", "images/pimg3.png","images/pimg4.png", "images/pimg5.png"],
+
+    rating: 5,
+    discountPercent: 25,
+    description: `
+    🐸⚖️ মজার সাথে শিখুক গণিত!
+
+🎯 Frog Balance Math Toy
+এখন বাচ্চাদের ম্যাথ শেখা হবে একদম খেলনার মতো সহজ!
+
+✨ ফ্রগ ব্যালান্স স্কেলের মাধ্যমে সংখ্যা গোনা, যোগ-বিয়োগ—সবই শিখবে মজার ছলে!
+
+💡 কেন কিনবেন?
+✔️ Counting & Number Skill উন্নত করে
+✔️ Brain Development & Logical Thinking বাড়ায়
+✔️ Hands-on Learning Experience
+✔️ Safe & Durable Material
+
+👶 ৩+ বয়সের বাচ্চাদের জন্য পারফেক্ট
+
+🎁 গিফট হিসেবে একদম বেস্ট চয়েস!
+
+🚚 সারা বাংলাদেশে ডেলিভারি
+📩 অর্ডার করতে ইনবক্স করুন আমাদের ফেইসবুক পেজে অথবা হোয়াটস এপ নাম্বারে।
+
+👉 আজই নিয়ে নিন, আপনার শিশুর শেখা হোক আরও স্মার্ট 💚
+    `
   }
 ];
 /*
